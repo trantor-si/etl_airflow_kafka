@@ -1,0 +1,5 @@
+sudo gzip -d /home/project/airflow/dags/finalassignment/tolldata.tgz
+sudo tar xvf /home/project/airflow/dags/finalassignment/tolldata.tar
+
+gzip -d tolldata.tgz
+tar xvf tolldata.tar

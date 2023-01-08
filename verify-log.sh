@@ -1,0 +1,1 @@
+echo '\c template1; \\SELECT * from access_log;' | psql --username=postgres --host=localhost

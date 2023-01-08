@@ -1,0 +1,27 @@
+# Download the file
+wget https://archive.apache.org/dist/kafka/2.8.0/kafka_2.12-2.8.0.tgz
+tar -xzf kafka_2.12-2.8.0.tgz
+
+# Start the MYSQL containner
+start_mysql
+
+# Start the MYSQL server
+mysql --host=127.0.0.1 --port=3306 --user=root --password=MTA4My1sdWNjb3N0
+
+# Dentro do MYSQL chamar os comandos SQL:
+create database tolldata;
+use tolldata;
+create table livetolldata(timestamp datetime,vehicle_id int,vehicle_type char(15),toll_plaza_id smallint);
+exit
+
+# Install the kafka Python module
+python3 -m pip install kafka-python
+
+# Install the MYSQL Python connector
+python3 -m pip install mysql-connector-python 
+
+# Download the Producer Python file
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/toll_traffic_generator.py
+
+# Download the Consumer Python file
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0250EN-SkillsNetwork/labs/Final%20Assignment/streaming_data_reader.py

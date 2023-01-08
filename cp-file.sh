@@ -1,0 +1,1 @@
+sudo cp $1.py $AIRFLOW_HOME/dags/$1.py

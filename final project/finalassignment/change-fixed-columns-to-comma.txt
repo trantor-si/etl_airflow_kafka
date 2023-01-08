@@ -1,0 +1,13 @@
+sed -r 's/^.{6}" "/&,/' payment-data.txt | sed -r 's/^.{32}/&,/' | sed -r 's/^.{41}/&,/' | sed -r 's/^.{50}/&,/' | sed -r 's/^.{61}/&,/' | sed -r 's/^.{66}/&,/'
+
+sed -E 's/^(.{6}) /\1,/' payment-data.txt | \
+sed -E 's/^(.{31}) /\1,/' | \
+sed -E 's/^(.{39}) /\1,/' | \
+sed -E 's/^(.{47}) /\1,/' | \
+sed -E 's/^(.{57}) /\1,/' | \
+sed -E 's/^(.{61}) /\1,/' | \
+tr -s '[:space:]' | \
+sed -E 's/^(.{0}) /\1/' \
+> fixed_width_data.csv
+
+cut -c 59- payment-data.txt | tr " " ","
